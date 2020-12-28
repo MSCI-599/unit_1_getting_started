@@ -1,8 +1,15 @@
 ---
-title: "RMarkdown"
-author: "MSCI 599"
 output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.asp = 0.618, collapse=TRUE) 
+```
+
+### Unit 1: Getting Started
+#### Lesson 2: Introduction to RMarkdown
+
+***
 
 ### What is RMarkdown?
 

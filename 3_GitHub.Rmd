@@ -256,7 +256,7 @@ Let's make changes to our own copy of this course repo. Remember the RMarkdown t
 
 Now that your project in RStudio has been updated,we follow the process of Stage > Commit > Pull > Push to send versions back to github. Once you've saved your .Rmd (feel free to knit, too), it shows up in your working directory. This process is exactly the same as what you did earlier when you created your own repo from scratch.
 
--  Click on the 'Git' tab (up by Environment/History)
+-  Click on the 'Git' tab in the upper-right corner of RStudio
 -  Select files waiting to be committed (stage all of them)
 -  Click 'Commit'
 -  Add a short commit message (required), then press 'Commit'
@@ -268,6 +268,12 @@ Cloud storage and version control!
 ## Course Workflow
 
 Now that you are set up with GitHub and you have found our class GitHub repository: https://github.com/MSCI-599 you can follow the class coding tutorials very easily. Whenever we start a new unit, y**ou should fork the associated unit repo to your own GitHub profile and Clone it onto your local computer.** From there you have access to all of the files we use in the tutorial: data, scripts, figures, readings etc. During class, create your own `.R` or `.Rmd` file and type the code along with me, but save the file with your initials at the end of the file name. That way you know that it's the versions that YOU created while you were following along with the course. You can take your own notes / comments directly in your `.R` or `.Rmd` files and reference them later. You'll also have the original tutorials that I created for you to reference as well. Commit and push your changes back into your repo as you go.
+
+When you are working, open up the `.Rmd` file associated with the lesson tutorial that we are working through that day. Also open a new `.Rmd` or `.R` file in the RStudio Project linked to that unit's repo on your computer to type the code we are writing along with the tutorial. You can toggle between the RStudio script that you are writing in RStudio and the typed-up tutorial that you knitted from the `.Rmd` file I created.
+
+## Course homework workflow
+
+I will send out homework assignments through GitHub Classroom. This will create a private repository that is just for your homework assignment where you can clone your private homework repo to your local computer, build your scripts / files, commit (save) your work, and push it back to your private homework repo that I have access to for grading.
 
 ### Potential problems
 

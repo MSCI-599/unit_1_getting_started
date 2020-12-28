@@ -29,7 +29,7 @@ First, please register on the Github website:
 
 <https://github.com/>
 
-The files you put on GitHub will be public (i.e. everyone can see them & suggest changes, but only the people with access to the repository can directly edit and add/remove files). You can also have private repositories on GitHub, which means that only you can see the files. GitHub now offers free private repositories as standard with up to three collaborators per repository. They also offer a free education package, with access to software and other perks, you can apply for one using this link.
+The files you put on GitHub are public by default (i.e. everyone can see them & suggest changes, but only the people with access to the repository can directly edit and add/remove files). You can also have private repositories on GitHub, which means that only you can see the files. GitHub now offers free private repositories as standard with up to three collaborators per repository. They also offer a free education package, with access to software and other perks, you can apply for one using this link: https://education.github.com/discount_requests/student_application
 
 ### Download and install Git on your computer:
 
@@ -104,7 +104,7 @@ You will have a local copy (on your computer) and an online copy (on GitHub) of 
 The GitHub workflow can be summarised by the "commit-pull-push" mantra.
 
 1. Commit
-    + Once you've saved your files, you need to commit them - this means the changes you have made to files in your repo will be saved as a version of the repo, and your changes are now ready to go up on GitHub (the online copy of the repository).
+    + Once you've created, deleted, or edited and saved files in your repo, you need to commit them - this means the changes you have made to files in your repo will be saved as a version of the repo, and your changes are now ready to be loaded onGitHub (the online copy of the repository).
 2. Pull
     + Now, before you send your changes to Github, you need to pull, i.e. make sure you are completely up to date with the latest version of the online version of the files - other people could have been working on them even if you haven't.
 3. Push
@@ -114,26 +114,30 @@ Each file on GitHub has a history, so instead of having many files like Disserta
 
 ### Create your own repository and project folder structure
 
-To make a repository, go to your Repositories page on your GitHub profile. Select `New`.... Repositories/New repository - choose a concise and informative name that has no spaces or funky characters in it. This can be your master repo that holds together past and ongoing research, data, scripts, manuscripts. Later on you might want to have more repositories - e.g. a repository associated with a particular project that you want to make public or a project where you are actively seeking feedback from a wider audience. For now, we will focus on organising and using your main repository that holds the files for all your work. With a free GitHub account, you can use public or private respositories.
+To make a repository, go to your Repositories page on your GitHub profile. Select `New`.... Repositories/New repository - choose a concise and informative name that has no spaces or funky characters in it. For today, a good name could be `hello_world`. Eventually you'll want to build a repo that holds together past and ongoing research, data, scripts, manuscripts for a specific project. Later on you might want to have more repositories - e.g. a repository associated with each project that you want version control for, or a public project where you are actively seeking feedback from a wider audience. 
 
-Click on Initialise repo with a README.md file. It's common practice for each repository to have a README.md file, which contains information about the project, the purpose of the repository, as well as any comments on licensing and data sources. Github understands several text formats, including .txt and .md. .md stands for a file written in Markdown, which is essentially just the plain markup language that we use in RMarkdown files, except without the functionality to read R code. 
+Click the check boxes to Initialise repo with a README.md file and a .gitignore file. Add a .gitignore template. Search in the template options for the `R` template since we are primarily coding in R. Then click `Create Repository`. 
 
-You can directly edit your README.md file on Github by clicking on the file and then selecting Edit this file.
+#### README file
 
-#### Write an informative README.md file
+It's common practice for each repository to have a README.md file, which contains information about the project, the purpose of the repository, as well as any comments on licensing and data sources. Github understands several text formats, including .txt and .md. .md stands for a file written in Markdown, which is essentially just the plain markup language that we use in RMarkdown files, except without the functionality to read R code. 
 
-You can now write the README.md file for your repository. To make headings and subheadings, put hashtags before a line of text - the more hashtags, the smaller the heading will appear. You can make lists using - and numbers 1, 2, 3, etc.. Here are some things you might want to consider including in a README file:
+You can directly edit your README.md file on Github by clicking on the file and then selecting Edit this file. It's a good idea to write an informative README.md file for your repository. Just like with RMarkdown, to make headings and subheadings, put hashtags before a line of text - the more hashtags, the smaller the heading will appear. You can make lists using - and numbers 1, 2, 3, etc.. Here are some things you might want to consider including in a README file:
 
 * Your name 
 * Project title
 * Links to website & social media
 * Contact details
 
-#### Write a .gitignore file
+Go to the repository page for the repository you just made. Scroll down and you'll see your README.md file displayed at the bottom of the page. Click the pencil in the upper right-hand corner of the README file to edit the file directly on GitHub. Add your name, the date and a short description. When you are done, scroll to the bottom and click `Commit changes` to save the changes you made to the README file to the master branch of your repository.
 
-Repositories often have a file called .gitignore and we are about to make one shortly. In this file you specify which files you want Git to ignore when users make changes and add files. Examples include temporary Word, Excel and Powerpoint files, .Rproj files, .Rhist files, etc. Some files you might want to only have on your local repository (i.e. on your computer), but not online as they might be too big to store online.
+#### Edit your .gitignore file
 
-Go to Create new file and write a .gitignore file within your main repository (not within any folders). You need to call the file .gitignore and then add the types of files that Git should ignore on separate lines. You can make this specific to your needs, but as a start, you can copy over this code:
+Repositories often have a file called `.gitignore`. The period at the beginning of the file name indicates that this will be a hidden file on your local computer. In this file you specify which files you want Git to ignore when users make changes and add files. So these are the kinds of files that you do NOT want to have stored on your GitHub repo. Examples include temporary Word, Excel and Powerpoint files, .Rproj files, .Rhist files, etc. Some files might get saved on your local repository (i.e. on your computer), but not online as they might be too big to store online.
+
+We initialized the repo with a .gitignore file template designed for R programmers. If you didn't initialize the repo with a .gitignore file, you could oo to your repo and Create new file and write a .gitignore file within your main repository (not within any folders). You would need to call the file .gitignore and then add the types of files that Git should ignore on separate lines. 
+
+Go to your repo and click on the .gitignore file and then click the edit pencil in the upper right-hand corner. You can keep the R template file exactly as it is, or you can make changes to the .gitignore file that are specific to your needs. This is what I've been using recently to exclude other types of files unrelated to R (such as temporary Microsoft Office files) that I might want to exclude from me repo. Feel free to copy and paste this into your own .gitignore file:
 
 ```
 # Prevent users to commit their own RProject
@@ -157,40 +161,37 @@ Go to Create new file and write a .gitignore file within your main repository (n
 #*README_files/
 ```
 
-You can also use one of the default .gitignore files provided, for example, the file for the R language. However, this file only contains R and RStudio related files that you may want to ignore and does not include things like temporary Microsoft Office files. 
-
-You can edit your .gitignore file anytime by clicking on it in the repo and then clicking the edit button (which looks like a pencil). The file can be edited and committed (saved) to your repo right on the GitHub site.
+You can go back to edit your .gitignore file by clicking on it in the repo and then clicking the edit button any time. After making edits, don't forget to commit them (save them) to your repo.
 
 #### Create folders
 
-Determine what your repository will contain - some examples include: manuscripts, data, figures, scripts, notes, etc. To make a new folder, go to your repo and click on `Add File -> Create new file` and add in the name of your new folder followed by a slash, e.g. `manuscripts/` before the name of the first file you want to put in the folder. It's always a good idea to create a README file, so you can call the file name `README.md` and then put some text in the Markdown file such as "The manuscripts folder contains article manuscripts, reports and presentations associated with this research". When creating folders within your repo through GitHub's website, you always need to make at least one file associated with them, you can't just create an empty folder. Add a brief explanation of what the folder is for in the README.md file, scroll down and click on the green `Commit new file` button. Add a quick message where it says Create README.md file in light grey text - we will cover GitHub etiquette later, but for now, when creating/editing files, it's always a good idea to change the default message to a more precise description of what was done and who did it. Stick with the default option of Commit directly to master branch - we will explain branches and pull requests at a later stage of the tutorial.
+Determine what your repository will contain - some examples include: manuscripts, data, figures, scripts, notes, etc. To make a new folder, go to your repo and click on `Add File -> Create new file` and add in the name of your new folder followed by a slash, e.g. `manuscripts/` before the name of the first file you want to put in the folder. It's always a good idea to create a README file, so you can call the file name `README.md` and then put some text in the Markdown file such as "The manuscripts folder contains article manuscripts, reports and presentations associated with this research". When creating folders within your repo through GitHub's website, you always need to make at least one file associated with them, you can't just create an empty folder, so the README file also serves this need. Add a brief explanation of what the folder is for in the README.md file, scroll down and click on the green `Commit new file` button. Add a quick message where it says Create README.md file in light grey text.
 
 ### Sync and interact with your repository through RStudio
 
-The "commit-pull-push" workflow can be embedded within RStudio using "Projects" and enabling version control for them - we will be doing that shortly in the tutorial.
-
-Log into your Github account and navigate to the repository you created earlier
+The "commit-pull-push" workflow can be embedded within RStudio using "Projects" and enabling version control for them. On GitHub, navigate to the "hello_world" repository you just created.
 
 Click the green download (indicated as an arrow pointing down) `Code` button and copy the HTTPS link:
 
 ![](doc/GitHub_Clone_Screenshot.png)
 
-Now open RStudio, click `File -> New Project -> Version control -> Git` and paste the HTTPS link from the Github repository into the `Repository URL:` field. Select a folder on your computer - that is where the "local" copy of your repository will be (the online one being on Github).
+Now open RStudio, click `File -> New Project -> Version control -> Git` and paste the HTTPS link from the Github repository into the `Repository URL:` field. Select a folder on your computer - that is where the "local" copy of your repository will be (whereas the online version of your repo is on Github).
 
-Once the files have finished copying across (this may take a while depending on the size of the repo you're joining), you will notice that a few things about your RStudio session have changed: there is a `Git` tab in the top right corner of RStudio, and all the files that are in the repo are now on your computer as well. We will use this `Git` tab to integrate our local files with our GitHub repository online.
+Once the files have finished copying across (this may take a while depending on the size of the repo you're joining), you will notice that a few things about your RStudio session have changed: there is a `Git` tab in the top right corner of RStudio, and all the files that you created in your repo on GitHub are now on your local computer as well. We will use this `Git` tab to integrate our local files with our GitHub repository online.
+
 ![](doc/RStudio_Git_Integration.png)
 
 You are now ready to start making changes and documenting them through Github! Note that you can't push empty folders.
 
 You can open some of the files you made online earlier - for example if you click on your `README.md` file in the `Files` pane in the lower right corner of `RStudio`, you can make changes to the local copy on your computer. Add some more text, such as the date that you created this repo, just for the sake of exemplifying how version control works. Save the changes you made to your file in the usual way `File -> Save`. 
 
-Now we are going to get the changes you made on the local copy of your README file synced up with the online copy on GitHub. You can do all of this through the `Git` pane in the upper right corner of RStudio. If you click on the `Git` tab you will see that now your `README.md` file is listed there. Add a check to the white box to the left of the filename. Now it has an `M` in the status box next to it - this means you have modified the file. If there's an `A`, that's an added file, and a `D` is a deleted file.
+You can also create new files. Within `RStudio`, go to `File -> New file -> RMarkdown` and create a new file. I'm going to call mine "Hello Repository". Write a few words in your `.Rmd` file and perhaps a short R code chunk that creates and prints out a variable with "Hello repository" in it. Save your `.Rmd` file with any name you like (I chose `hello_repo.Rmd`).
 
-If you select the `README.md` file and click on `Diff`, you will see the changes you have made. Additions are highlighted in green and deletions are highlighted in red. Once the box next to the file has been checked, it is `Staged`, ready to be commited to Github.
+Now we are going to get the changes you made on the local copy of your README file and your new `.Rmd` file synced up with the online copy on GitHub. You can do all of this through the `Git` pane in the upper right corner of RStudio. If you click on the `Git` tab you will see that now your `README.md` file is listed there. Add a check to the white box to the left of the README file under the `Staged` column. Now it has an `M` in the status box next to it - this means you have modified the file. Add a check in the white box next to the `hello_repo.Rmd` file. Now it has an `A` next to it, which means it's an added file. If we had deleted a file from the repo in our local directory, there would be a `D` next to it for a deleted file. If there are changes that you made in your local repo that you don't want to push out to the GitHub repo, just don't click on the box next to those files in the `Staged` column.
 
-Now in the `Git` pane in RStudio, click on `Commit`. A window will pop up that again, shows the changes you made to the file(s) along with a box in the upper right corner to type out a `commit message`. You are required to include a message here. Aim to be concise and informative in your commit message - what did you do? In my case, I added the creation date for the repo to the README file. Once you have typed in your message and clicked on `Commit`, you will get a message about what changes you have made. You can close the message and the `Commit` pop-up window.
+Once you have `Staged` the files that you want to commit to the GitHub repository, click on `Commit`. A window will pop up that shows the changes you made to the file(s). Additions are highlighted in green and deletions are highlighted in red. There is a box in the upper right hand corner where you must type out a `commit message`. You are required to include a commit message. Aim to be concise and informative in your commit message - what did you do? In my case, I edited the README file and created the hello_repo Rmd file. Once you have typed in your message and clicked on `Commit`, you will get a message about what changes you have made. You can close the message and the `Commit` pop-up window.
 
-Note: If you want to commit all of your files at once and you don't want to go through and check (or uncheck) each box next to every single file, highlight one file in the Git pane and press `CNTRL+A` on your keyboard. This will select all files at once. If you check one of the boxes now, the boxes next to all selected files will be checked. 
+Note: If you want to commit all of your files at once and you don't want to go through and check (or uncheck) each box next to every single file, you can highlight the top file in the Git pane and hold `SHIFT` on your keyboard while you click on the bottom file . This will select all files at once. If you check one of the boxes now, the boxes next to all selected files will be checked. 
 
 Once you click `Commit`, you will see a message saying that your branch is now one commit ahead of the `origin/master` branch - that is the branch that is on Github - we now need to let Github know about the changes we have made.
 
@@ -200,7 +201,7 @@ We can't repeat it enough: **always `Pull` before you `Push`.** `Pull` means tha
 
 Go back to your repository on Github, where you can now see all of your updated files online. Click on your README file on GitHub and then on `History` - this is where you can see the different versions of your script - obviously in real life situations you will make many changes as your work progresses - here we just have two. Thanks to Github and version control, you don't need to save hundreds of almost identical files (e.g. `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`) - you have one file and by clicking on the different commits, you can see what it looked like at different points in time.
 
-__You are now ready to add your scripts, plots, data files, etc. to your new project directory and follow the same workflow as outlined above - stage your files, commit, pull, push.__ If you have already created some files (scripts, documentation, etc.) for this project, go ahead and copy them into your project folder that you tied to the repository on GitHub. Otherwise, start creating new files and write your code, produce figures, draft papers, etc. and make sure you are saving them in your project folder. Whenever a file is added to this folder or updated inside of this folder, you'll see it appear in your Git pane in the upper-right corner of RStudio. At reasonable intervals, or whenever you get something accomplished, make sure that you commit, pull and push those new files or new changes out to the master branch of your repository in GitHub.
+**You are now ready to add your scripts, plots, data files, etc. to your new project directory and follow the same workflow as outlined above - stage your files, commit, pull, push.** If you have already created some files (scripts, documentation, etc.) for a new project repo, go ahead and copy them into your project folder that you tied to the repository on GitHub. Otherwise, start creating new files and write your code, produce figures, draft papers, etc. and make sure you are saving them in your project folder. Whenever a file is added to this folder or updated inside of this folder, you'll see it appear in your Git pane in the upper-right corner of RStudio. At reasonable intervals, or whenever you get something accomplished, make sure that you commit, pull and push those new files or new changes out to the master branch of your repository in GitHub.
 
 #### XKCD on Git commit messages:
 
@@ -208,60 +209,65 @@ __You are now ready to add your scripts, plots, data files, etc. to your new pro
 
 ### Using files on someone else's public GitHub
 
-Now that you can create your own repository (project) from scratch on GitHub, it's time to learn how to use some of the data, models and materials that's already available in other peoples' repositories. You can grab someone else's GitHub repo, work with it in RStudio, and push it back onto GitHub. 
+Now that you can create your own repository (project) from scratch on GitHub, it's time to learn how to use some of the data, models and materials that's already available in other peoples' repositories. You can grab someone else's GitHub repo, work with it in RStudio, and push it back onto GitHub.
 
-Let's say you found some data/models/ etc. on GitHub that's part of a public repository owned by a person you don't know. That person has a public repo because they want people to have access to their model. How can we get information from their repo into our github and then work with it in RStudio before sending out updated version back to github? That's what we'll do first.
+Let's say you found some data/models/ etc. on GitHub that's part of a public repository owned by a person you don't know. That person has a public repo because they want people to have access to their model. It is useful to pull files from this existing repo into our own github profile. Then we can work with it in RStudio and send out our changes to our own copy of this repository on our own GitHub repository. 
 
-This requires a couple of steps:
+This is especially relevant for our class, because **I have created tutorials and code for each of the class modules and hosted them in repositories on GitHub:** https://github.com/MSCI-599
+
+This type of work flow requires the following steps:
+
+-  FORK (or copy) an existing public repository to your own profile
+-  CLONE your new online repository to your local computer
+-  STAGE / COMMIT / PULL / PUSH your edits between the local and remote repos
+
+This is just like the process we just did with our Hello world repo, except that we are FORKing an existing repository instead of creating one from scratch.
 
 #### FORK
 
-As you can imagine, people you don't know usually don't want you to be able to update their files without them knowing it. That's why you can't actually change a file in a 'master branch'
-unless you've been added as a collaborator by the "owner". So instead of using and changing their original files, you need to fork their repo first. This essentially makes a copy of all information in their repo, and stores it as your own.
+As you can imagine, people you don't know usually don't want you to be able to update their files without them knowing it. That's why you can't actually change a file in a 'master branch' unless you've been added as a collaborator by the "owner". So instead of using and changing their original files, you need to fork their repo first. This essentially makes a copy of all information in their repo, and stores it as your own.
 
-There's a hysterical analysis on GitHub that examines the Harry Potter books and the aggressiveness of each character. Let's grab that and mess with it.
+Go to the course GitHub page https://github.com/MSCI-599 and Fork the first module `unit_1_getting_started` to your own GitHub profile:
 
-* In github, navigate to the user andrewheiss's github page to find the 'Harry-Potter-aggression' (you can search for it)
-* Press 'Fork' in the top right
-* Now navigate back to your github account (if you click on your user picture in the top right,
+-  Sign into github and search for msci 599 to find our course page 
+   +  If you don't find it you may need to click "Search all of GitHub"
+-  Click on the `unit_1_getting_started` repo
+-  Press 'Fork' in the top right corner
+-  Now navigate back to your github account (if you click on your user picture in the top right,
 it'll bring down a menu where you can select "Your repositories"), and you'll see the forked repo exists in your world where you can mess with it
 
 #### CLONE
 
-Once you've forked a repo into your own github, you probably want to start working with it in RStudio. How?
-The easiest way is to get the repo URL from github, THEN create the corresponding project in RStudio that it'll communicate with. When you're in your forked repo that you want to work with:
+Once you've forked a repo into your own github, you probably want to start working with it in RStudio. The easiest way is to get the repo URL from github, THEN create the corresponding project in RStudio that it'll communicate with. When you're in your forked repo that you want to work with:
 
-* Click on 'Clone or Download'
-* Select and Copy the ENTIRE URL
-* Open a new RStudio session
-* Choose New Project > **Version Control** > **Git** > Paste the URL from github into the
-'Repository URL' bar > Press TAB to auto-populate the project name > Make sure you're in the subdirectory you want to be in > Select 'Open in a new session' > Create project!
+-  Click on the green 'Code' button with the down arrow
+-  Select and copy the entire URL (or click on the clipboard to the right of the URL)
+-  Open a new RStudio session
+-  Go to `File -> New Project -> Version Control -> Git` 
+-  Paste the URL from github into the 'Repository URL' bar 
+-  Make sure the project name is the same as the repo name and select the directory on your local computer where you want to save course files. 
+-  Select `Open in a new session -> Create project!`
 
-Now, it kind of seems like you're back to working in an RStudio project like normal, right? And all of the files that were in the repo you forked are now in your working directory.
-But we also have version control power now.
-What does that mean? Let's make some changes in RStudio and find out.
+Now, it kind of seems like you're back to working in an RStudio project like normal, right? And all of the files that were in the repo you forked are now in your working directory. But we also have version control power now. 
 
-* Create a new RMarkdown document
-* Read in the Harry Potter aggression .csv file
-* Create a simplified data.frame of 'aggressions per mention' just for Draco and Harry
-* Plot aggressions using a bar plot
-* Save the RMarkdown doc into the project folder (working directory)
+Let's make changes to our own copy of this course repo. Remember the RMarkdown tutorial in the last class where you created an example `.Rmd` file? Or in the class before, did you create a `.R` script where you practiced making all of the different data types in R? Find those files on your computer and copy them over to your new `unit_1_getting_started` repo on your local computer. You might want to append your initials to the end of the file name so that you know that this is material that YOU created during the class. That way, you also don't copy over any of the files that I created for you in this repo. Or you can simply go into one of the files, such as `example_Rmd.Rmd` and make a change to it. Perhaps just add your initials to the top to say "EMG wuz here". Once you have made some changes to YOUR copy of the class repo, you want to save those changes and push them back out to GitHub. These changes will only exist in the forked version of this repo in your GitHub profile. Your edits will not be saved in the original class version of this repository.
 
 #### STAGE / COMMIT / PULL / PUSH
 
-Now your project in RStudio has been updated, but we want this new 'version' of the Project to be stored in github (that's kind of the point). We follow the process of Stage > Commit > Pull > Push to send versions back to github.
-Once you've saved your .Rmd (feel free to knit, too), it shows up in your working directory.
+Now that your project in RStudio has been updated,we follow the process of Stage > Commit > Pull > Push to send versions back to github. Once you've saved your .Rmd (feel free to knit, too), it shows up in your working directory. This process is exactly the same as what you did earlier when you created your own repo from scratch.
 
-* Click on the 'Git' tab (up by Environment/History)
-* Select files waiting to be committed (stage all of them)
-* Click 'Commit'
-* Add a short commit message (required), then press 'Commit'
-* No error = working
-* Press 'Pull' - the blue 'DOWN' icon - to make sure no other collaborators have added something to this repo (they didn't because this repo doesn't have any other collaborators)
-* Press 'Push' - the green 'UP' icon - to send the commits back to github
-* Refresh your GitHub repo, and see that the file(s) YOU created now exist in your repo. Cool!
+-  Click on the 'Git' tab (up by Environment/History)
+-  Select files waiting to be committed (stage all of them)
+-  Click 'Commit'
+-  Add a short commit message (required), then press 'Commit'
+-  Click 'Pull' - the blue 'DOWN' icon - to make sure no other collaborators have added something to this repo (they didn't because this repo doesn't have any other collaborators)
+-  Click 'Push' - the green 'UP' icon - to send the commits back to github
+-  Refresh your GitHub repo online, and see that the file(s) YOU created now exist in your repo. Cool!
 Cloud storage and version control!
 
+## Course Workflow
+
+Now that you are set up with GitHub and you have found our class GitHub repository: https://github.com/MSCI-599 you can follow the class coding tutorials very easily. Whenever we start a new unit, y**ou should fork the associated unit repo to your own GitHub profile and Clone it onto your local computer.** From there you have access to all of the files we use in the tutorial: data, scripts, figures, readings etc. During class, create your own `.R` or `.Rmd` file and type the code along with me, but save the file with your initials at the end of the file name. That way you know that it's the versions that YOU created while you were following along with the course. You can take your own notes / comments directly in your `.R` or `.Rmd` files and reference them later. You'll also have the original tutorials that I created for you to reference as well. Commit and push your changes back into your repo as you go.
 
 ### Potential problems
 

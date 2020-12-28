@@ -2,7 +2,7 @@
 title: "Example Rmd"
 author: "MSCI 599"
 date: "12/28/2020"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -86,6 +86,10 @@ Here is a numbered list:
 1.  Evee (age 7)
 2.  Hazel (age 5)
 3.  Nell (age 1)
+
+We can include links by simply pasting them in the text https://blackboard.sc.edu/
+
+Or we can embed them into the text so that you don't see the actual link, you just click on the words [go to Blackboard](https://blackboard.sc.edu/) that we associated with a link.
 
 
 We can also embed figures that we already have saved on our hard drive like this. Make sure the path to where the file is stored is relative to the path where your RMarkdown document lives.

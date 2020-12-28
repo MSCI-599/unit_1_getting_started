@@ -1,0 +1,42 @@
+---
+title: "HW_1_software_practice"
+author: "MSCI 599"
+date: "12/27/2020"
+output: html_document
+---
+
+***
+
+```{r setup, include=FALSE}
+# Put any RMarkdown options you'd like to have throughout the document here
+# These are the options I like to use to make figures smaller and print code output right below the command:
+knitr::opts_chunk$set(fig.width=6, fig.asp = 0.618, collapse=TRUE) 
+```
+
+### Homework # 1 "Software Practice"
+
+The goal of this homework is: 
+
+-  Demonstrate that you have R and RStudio successfully installed on your computer
+-  You can create an RMarkdown document 
+-  You can interact with the class GitHub page
+
+***
+
+Create your own dataset about something in your life right now. I'm looking for at least 10 observations of at least 2 variables. Bonus points if you use this to entertain me or teach me something about yourself. 
+
+Here are some examples:
+
+-  The title, genre and number of pages in your 10 favorite books
+-  The number of squirrels you can see outside of your window every hour on the hour along with a 1-word description of the weather (i.e. "sunny", "drizzly", "foggy")
+-  The calories, protein and salt content of the last 10 snacks you ate
+-  The number of coins and mushrooms you collect in each of 10 levels when you replay Super Mario Brothers on SNES over the weekend
+-  The number of letters and the "severity index" (haha) of the last 10 curse-words you said while working on your research
+
+This should be fun and shouldn't take much time. For more inspiration, you can look at the Dear Data project: http://www.dear-data.com/theproject
+
+Create an RMarkdown file (.Rmd) in RStudio and explain the data that you collected. Why did you choose to collect this data? What does each variable mean? Insert a code chunk in the RMarkdown document where you manually build a data.frame with R code that contains your data. Print your data.frame with the `print()` function, show me the `summary()` output and if you have any numeric variables, calculate their `mean()`.
+
+Make sure the `title`, `author` and `date` parameters are correct in the RMarkdown YAML at the top of the file. Please save your file with the name `HW_1_your_last_name.Rmd`
+
+

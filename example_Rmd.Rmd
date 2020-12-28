@@ -1,0 +1,99 @@
+---
+title: "Example Rmd"
+author: "MSCI 599"
+date: "12/28/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse=TRUE) 
+```
+
+# MSCI 599: Marine Data Science with R
+## Unit 1: Getting Started
+### Lesson 2: Introduction to RMarkdown
+#### Wow, all of these headings are really ugly!
+
+I usually get rid of the YAML except for the output document parameter, because I like to have more control over the appearance of my documnet header. Then I can use some combination of hashtags ### that I think look nice.
+
+You can put in a line to separate sections with three asterisks:
+
+***
+
+### RMarkdown isn't too tricky
+
+We can just write text like normal, and use a single asterisks to turn text into *italics style* or double asterisks to turn text into **bold style**. 
+
+Sometimes we'll want to include some code and we just insert a chunk like this:
+
+```{r}
+x=c(1,2,3)
+y=c(-6,-4,-2)
+```
+
+We can also write code but hide it from our document:
+
+```{r, include=FALSE}
+z=c(20,25,30)
+```
+
+We can print output right to our document:
+
+```{r}
+mean(z)  # Remember I hid the creation of z using the include=FALSE parameter
+```
+
+We may even want to show code without actually evaluating it in R. For example, you might want to show code that you know will produce an error. If you try to evaluate it within your RMarkdown file, your document won't knit. If you set the error code in a chunk where eval=FALSE, you can still show the code without producing the error:
+
+```{r, eval=FALSE}
+mean(xyz)
+```
+
+We can print figures directly to the document the same way:
+
+```{r}
+plot(x,z)
+```
+
+We can change the size of the output figures right in the code chunk if we want to:
+
+```{r, fig.width=4, fig.height=4}
+plot(x,z)
+```
+
+We can embed text inside of highlihgted boxes with single back-ticks to emphasize `key words` like this. 
+
+We can also embed equations into the text like $y = mx + b$ or $y = e^{rt}$ or $\alpha=\sqrt{\beta_0}$ or we can write longer equations on new lines using 2 dollar signs like this:
+
+$$y = \beta_1 + \beta_2*x + \varepsilon$$
+
+The syntax for equation editing all comes from Latex, so when you are trying to look up how to write a specific symbol or mathematical equation style, Google the syntax used in Latex.
+
+You can make lists using dashes `-`, or asterisks `*` or plus signs `+`. You can also make a numbered list. Make sure that after your dash or number, you have 2 spaces:
+
+**My pets:**
+
+*  Dog
+   +  Nana
+*  Cats
+   +  Wheezer
+   +  Napoleon
+   
+Here is a numbered list:
+
+**My kids:**
+
+1.  Evee (age 7)
+2.  Hazel (age 5)
+3.  Nell (age 1)
+
+
+We can also embed figures that we already have saved on our hard drive like this. Make sure the path to where the file is stored is relative to the path where your RMarkdown document lives.
+
+![A Piled Higher and Deeper comic](figs/PhD_coding.png)
+
+Most rich text formatting won't render properly in RMarkdown if it's not separated by a line of white space. Make sure you include a blank line before an after lists, code chunks, headings, embedded figures, etc. 
+
+
+
+

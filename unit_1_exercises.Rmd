@@ -51,3 +51,7 @@ signif(mean(world_oceans$volume_km3), digits=3) - mean(world_oceans$volume_km3)
 mean(signif(world_oceans$volume_km3, digits=3)) - mean(world_oceans$volume_km3)
 ```
 
+### Exercise 2.1
+
+Write an example RMarkdown file and knit it into an HTML document and a PDF document. (See `example_Rmd.Rmd`)
+

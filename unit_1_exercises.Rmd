@@ -1,0 +1,53 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.asp = 0.618, collapse=TRUE) 
+```
+
+### In-class exercises
+### Unit 1: Getting Started
+
+***
+
+### Exercise 1.1
+
+Creat a vector of 5 numbers (any numbers will do). Multiply the vector by 2 and print out the results. Try adding 7 to the vector. Does this just add 7 to the first number in the vector or to every element of the vector? Make another vector with any 3 numbers and add this to your first vector, then save the results into a new variable. Are the results what you expected?
+
+```{r}
+dat = c(1,3,5,7,9)
+dat*2
+dat+7
+
+dat2 = c(2,4,6)
+dat3 = dat+dat2
+dat3
+```
+
+### Exercise 1.2
+
+Use the `world_oceans` data frame that we have built and add a new column for ocean volume. Use the area and average depth variables to create a back-of-the-envelope volume calculation in $km^3$ (watch your units!). Then create a new data frame that holds just the subset of oceans that you have personally traveled to. 
+
+```{r}
+world_oceans = data.frame(oceans = c("Atlantic", "Pacific", "Indian", "Arctic", "Southern"),
+                           area_km2 = c(77e6, 156e6, 69e6, 14e6, 20e6),
+                           avg_depth_m = c(3926, 4028, 3963, 3953, 4500))
+
+world_oceans$volume_km3 = world_oceans$area_km2 * (world_oceans$avg_depth_m * 0.001)
+my_oceans = world_oceans[c(1,2),]
+```
+
+### Exercise 1.3
+
+Look at the R Documentation for the `signif()` function by typing `?signif` into the Console or searching for "signif" in the Help pane in the lower right corner of RStudio. Use signif() to reduce the number of digits in your world_oceans volume data to 3 significant digits then calculate the mean ocean volume. Try doing this in the opposite order by first calculating the mean ocean volume, then reducing your answer to just 3 significant digits. How different are the 2 answers? Which one is a better estimation? 
+
+```{r}
+mean(world_oceans$volume_km3) # True answer
+signif(mean(world_oceans$volume_km3), digits=3) # better estimation
+mean(signif(world_oceans$volume_km3, digits=3)) # throws away information before calculation
+
+signif(mean(world_oceans$volume_km3), digits=3) - mean(world_oceans$volume_km3) 
+mean(signif(world_oceans$volume_km3, digits=3)) - mean(world_oceans$volume_km3)
+```
+

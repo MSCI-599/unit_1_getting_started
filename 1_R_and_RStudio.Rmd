@@ -1,0 +1,427 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.asp = 0.618, collapse=TRUE) 
+```
+
+### Unit 1: Getting Started
+#### Lesson 1: Introduction to R
+#### New functions: 
+print(), c(), typeof(), length(), seq(), rep(), matrix(), class(), array(), list(), data.frame(), round(), mean(), install.packages(), library(), as.character(), as.numceric(), is.na()
+
+***
+
+### Introduction to R and RStudio
+
+R is an open source programming language. That means that, if you choose, you can access the code behind every single function to see how the language is built. More importantly, R is free to download and use. Most importantly, and owing in part to the fact that R is free and open source, many many scientists have written R code (inculding functions and packages, which we will learn about later) so that R continues to become more powerful and more efficient every day. Do you have a tough problem to solve? Perhaps your scienctific questions would be best answered by statistical models, mechanistic models, spatial analysis or machine learning. Perhaps you need to use numerical estimators to solve some nonlinear dynamics systems. Perhaps you want to make gorgeous figures or layered maps or interactive plots. Thanks to all of the hard work from R users that came before you, much of the code to do these things well and efficiently has already been written. The recent additions of the tidyvers and ggplot (you will learn more about these later) have made data science in R more accessible than ever before. Now you just need to learn how to take advantage of these tools.
+
+R is a dynamic programming language, which means R automatically interprets your code as you run it. This is different from other programming languages, such as C, Java, and FORTRAN, where you have to compile your human-readable code into machine-readable code (often 1s and 0s) before you can run it.
+
+Remember that R is the programming language we will learn in this course. However, when we write and run code we will usually do it through RStudio. RStudio is a free, open source R integrated development environment (IDE). It provides a built in editor, works on all platforms (including on servers) and provides many advantages like integration with gitHub and software for writing dynamic notebooks such as RMarkdown files. You'll learn about this later. For now, just trust me that all the cool kids use RStudio. To get started, open RStudio just as you would open any other application on your computer. 
+
+When you open RStudio, a window should appear in your screen like this:
+![](figs/01-rstudio.png)
+
+The RStudio interface is simple. When you first open RStudio, there are three large panes. The left pane is the console, where you can either directly type in the code you want to run. The output from your code is also printed directly into the console. The upper right pane shows the RStudio Environment, which lists all of the objects that are currently loaded. You can use the lower right pane to toggle between the `Files` and directories on your computer, to view `Plots` you have made and to use the `Help` features to search for documentation on many of the functionalities within R.
+
+To start programming, type R code into the bottom line of the RStudio console pane and then hit `Enter` to run it. The code you type is called a command, because it will command your computer to do something for you. The line you type it into is called the command line. When you type a command at the prompt and hit `Enter`, your computer executes the command and shows you the results. Then RStudio displays a fresh prompt for your next command. 
+
+
+#### Hello World
+
+For those of you new to programming, the first thing we traditionally do when we begin using a new language is learn how to print "Hello World" to the screen. In R, we will use the `print()` function and we will pass it the string "Hello World!". 
+
+```{r}
+print("Hello World!")
+```
+
+Data science is ultimately about the manipulation of data, which is stored in objects or variables when you are writing code. Note: in R, the words *object* and *variable* are equivalent. There are many different object types, depending on what your data looks like. In the previous command, we inserted "Hello World!" directly into the `print()` function. However, we also could have stored the data "Hello World!" in an object, and passed the object to the `print()` function like so:
+
+```{r}
+my_prediction = "I will learn SO MUCH in this course!!!"
+print(my_prediction)
+```
+
+Note that this time, I passed the object to the `print()` function instead of just typing the string directly into the function. We'll talk more about data types, objects and functions later in this lecture.
+
+### User errors
+
+If you type 1 + 1 into the RStudio console and hit `Enter`, RStudio will display:
+
+```{r}
+1+1
+```
+
+However, if you type an incomplete command and press `Enter`, R will display a + prompt, which means R is waiting for you to type the rest of your command. Either finish the command or hit `Escape` to start over:
+
+```{r, error=TRUE}
+1+
+```
+
+If you type a command that R doesn’t recognize, R will return an error message. For example:
+
+```{r, error=TRUE}
+1+%1
+```
+
+When you see an error message, don’t panic. R is just telling you that your computer couldn’t understand or do what you asked it to do. You can then try a different command at the next prompt. 
+
+Sometimes you'll run a command that takes FOREVER, and perhaps you realize that's because you asked R to do something you shouldn't have, or perhaps you just don't want to wait around for the command to finish because you are late for coffee with your BFF. With your cursor in the console pane, type `Escape` and R will stop running the command and give you the `>` prompt again. Sometimes it will take a minute for R to respond.
+
+### Creating an R script
+
+When you need to write more than one or two lines of code, typing your commands into the RStudio console becomes very impractical. Instead, we will open a new R script (.R file), which is a type of text file where we can save every line of code that we write. Go to `File` -> `New file` -> `R Script` to get started. Now your RStudio window will look like this:
+![](figs/01-rstudio-script.png)
+
+
+Now the top left pane is your new R script, and the bottom left pane is the console. You can still type commands into the console whenever you would like to. However, you can also type your commands into the R script, and when you run the commands, the commands and output will be printed to the console. Try typing `print('Hello world')` as the first line in your R script. To run or "execute" your command, put your cursor anywhere on the line and hit `control + Enter` in Windows, `command + Enter` on a Mac or `control + Return` on a Linus machine. The cursor will automatically advance to the next line so that you can run your code line by line. If you highlight a section of code, the same run command will run all of the lines within the highlighted section. Alternatively, you can press the green arrow button in RStudio to execute your code, or click on `Run selected lines` under the `Code` drop-down menu. Now you can edit and save your code in the R script - that way you can look at it or re-run it later.
+
+#### Comments
+
+A comment is piece of text in your code that will not be executed with the rest of the code, but its purpose is to be a note to the person reading the code. Smart programmers use comments to leave short notes and explanations for specific lines of code. The comment character in R is `#`, anything to the right of a `#` in a script will be ignored by R.
+
+```{r}
+# Here is my comment, I can say whatever I want
+my_color = "green"  # this is my favorite color :)
+print(my_color)
+```
+
+#### R is a calculator
+That's right. Try it out:
+
+```{r}
+2+2
+2*(9/3)
+4^2+(2-3)*0.1
+```
+
+This becomes much more useful when we start to assign objects For example, let's estimate the surface area of the ocean on Earth using the radius of the Earth:
+
+```{r}
+earth_radius_km = 6371
+pi_estimate = 3.14159
+surface_area_km2 = 4*pi_estimate*earth_radius_km^2   # Surface area of a sphere is A = 4*pi*r^2
+surface_area_oceans_km2 = surface_area_km2*0.7 # The ocean is about 70% of the Earth's surface
+print(surface_area_oceans_km2)
+```
+We created our own objects and gave them our own names. I like to use units in my object names to keep track of what I'm doing. We assigned the answers to our math problems to new object names. Finally, when I wanted to know the answer to my final calculation, I printed out the final object using the `print()` function. Informally when you are programming in R, you can also just use the name of the object to print out its contents. We also could have relied on the fact that R has some common numbers stored in its memory, including `pi`:
+
+```{r}
+pi
+surface_area_km2 = 4*pi*earth_radius_km^2   # Surface area of a sphere is A = 4*pi*r^2
+surface_area_oceans_km2 = surface_area_km2*0.7 # The ocean is about 70% of the Earth's surface
+surface_area_oceans_km2
+```
+
+To see what built-in constants R stores, we can consult RStudio's *Help* feature. We can access the help feature from the Console by typing a `?`. Let's try using *Help* to see which constants R stores, then let's use it to learn about the `print()` function that we used earlier:
+
+```{r}
+?Constants
+?print
+```
+
+Note that if we had called our own variable with the name `pi` it would have overwritten the built-in R constant:
+
+```{r}
+pi
+pi = 3.14
+pi
+```
+
+Note also that I use the `=` to assign values to an object name, however, R users also frequently use `<-` for assignation. 
+
+```{r}
+x = 2
+x
+y <- 3
+y
+```
+
+There are plenty of arguments across the internet over which style is better, but for this course whichever style you prefer is completely acceptable.
+
+### Overview of R data types and data structures
+
+So we have already seen *character* data types (often called *strings* in other languages), which can hold letters, numbers and punctuation, when we printed out "Hello World". We have also seen *numeric* data types when we estimated the surface area of the oceans. Here are the most common R data types that we will use:
+
+* character: "a", "abc", "I ate 7 pizzas!"
+* double: 2, -12.7, 82e6
+* integer: 2L, 145L (where the L designates an integer)
+* logical: TRUE, T, FALSE, F
+
+Note that R often refers to both doubles and integers as the numeric data type. The data that scientists work with are essentially lists filled with these data types, such as a 100 temperature recordings, or the first and last names of all of the students in a class. R’s base data structures, or *classes* can be organised by their dimensionality (1d, 2d, or nd) and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types). R’s most common data structures are vectors, matrices, arrays, lists, and data frames:
+![](figs/R_data_types.png) 
+
+#### Atomic vectors
+
+Atomic vectors store data as a one-dimensional array, and each atomic vector can only store one type of data. Note that, unlike other programming languages, R has no 0-dimensional, or scalar types. Individual numbers or characters, which you might think would be scalars, are actually vectors of length one. When you assign a single value to an object, you are creating an atomic vector with a length of 1. You can also create an atomic vector with multiple values using `c()`, which is short for combine.
+
+```{r}
+ocean = "Atlantic"
+oceans = c("Atlantic", "Pacific", "Indian", "Arctic", "Southern")
+num = 1
+nums = c(1, 2, 3, 4)
+int = 4L
+ints = c(1L, 2L, 3L, 4L)
+answer = TRUE
+answers = c(TRUE, FALSE, FALSE, TRUE)
+```
+
+Here are two helpful functions to help determine the contents of an atomic vector:
+
+* `typeof()` - returns the data type of the object
+* `class()` - returns the class, or data structure, of the object. For atomic vectors, this returns the data type
+* `length()` - tells you how many elements the vector contains
+
+```{r}
+typeof(oceans)
+length(oceans)
+```
+
+There are plenty of shortcuts for creating regular atomic vectors of numbers. For example, you can use the colon `:` to indicate a range of numbers. You can use the `seq()` function to create a sequence of numbers. You can also use the `rep()` function to repeat values:
+
+```{r}
+c(1:10)
+seq(10)
+seq(from = 2, to = 9)
+seq(from = -1, to = 1, by = 0.1)
+rep(3, 10) # the number 3 is repeated 10 times
+c("fa", rep("la",4))
+```
+
+We access elements of vectors using square bracket notation:
+
+```{r}
+x <- 2:20
+x[1]      #returns the 1st element
+x[-1]     #returns everything except the first element
+x[2:4]
+x[c(3, 5:10, 1)]
+```
+
+### Exercise 1.1
+
+Creat a vector of 5 numbers (any numbers will do). Multiply the vector by 2 and print out the results. Try adding 7 to the vector. Does this just add 7 to the first number in the vector or to every element of the vector? Make another vector with any 3 numbers and add this to your first vector, then save the results into a new variable. Are the results what you expected?
+
+#### Matrix
+
+Matrices store values in a two-dimensional array, just like a matrix from linear algebra. Matrices are a different *class* of data, i.e. a different type of data structure, than atomic vectors. To create one, you can use `matrix` to reorganize an atomic vector into two dimensions. Define the shape of the matrix using the nrow argument to set the number of rows and/or the ncol argument to set the number of columns in the matrix. The `matrix` function will fill up the matrix column by column by default, but you can fill the matrix row by row if you include the argument `byrow = TRUE`:
+
+```{r}
+my_matrix1 = matrix(1:6, nrow = 2)
+my_matrix1
+my_matrix2 = matrix(1:6, nrow = 2, byrow=TRUE)
+my_matrix2
+class(my_matrix2)
+```
+
+To access an element in your matrix, use square brackets to indicate the row(s) and column(s) that you are interested in. If you leave the row or column subsetting space blank, then R will automatically return all the rows or columns in the matrix. If you only use one number to subset a 2-dimensional matrix, it will return the $n^th$ element of the matrix, by column. Subsetting a matrix this was would be considered bad programming practice because it's unnecessarily confusing. 
+
+```{r}
+my_matrix1[2,1] # Get element in 2nd row, 1st column
+my_matrix2[,3]  # Get all rows in 3rd column
+my_matrix1[3]   # Returns 3rd element of matrix
+```
+
+We won't go over it here, but all of the tools for basic matrix algebra are available in R and easy to use, such as matrix multiplication, eigenvector and eigenvalue estimation, etc.
+
+#### Array
+
+The `array` function creates an n-dimensional array. For example, you could use `array` to sort values into a cube of three dimensions or a hypercube in 4, 5, or n dimensions. To build an array, provide an atomic vector with data as the first argument, and a vector of dimensions as the second argument:
+
+```{r}
+my_array = array(c(1:18), dim=c(3,3,2))
+my_array
+class(my_array)  # the class or data structure is an "array"
+typeof(my_array) # the array is filled with data of the type "integer"
+```
+
+Again, you use square brackets to access or subset elements in your multi-dimensional array. You should specify the element position(s) you want in every dimension of the array. So if you have a 3-D array, you will subset with code like this: `my_3d_array[row(s), column(s), sheet(s)]`. Technically, you can just subset with a single number and it will returns the $n^th$ element of the array first going through the rows then columns then sheets, but this is unnecessarily confusing. If you attempt to subset a 3-D array with 2 numbers, an error will be thrown. 
+
+```{r}
+my_array[3,2,1] # Best practice
+my_array[4]     # Confusing
+```
+
+```{r, eval=FALSE}
+my_array[2,1]   # Error
+```
+
+#### List
+
+Lists are like atomic vectors because they group data into a one-dimensional set. However, lists do not group together individual values; lists group together R objects, such as atomic vectors and other lists. For example, you can make a list that contains a numeric vector of length 31 in its first element, a character vector of length 1 in its second element, and a new list of length 2 in its third element. You can use the `list()` function to create a list the same way `c()` creates a vector. Separate each element in the list with a comma:
+
+```{r}
+list1 = list(95:103, "R", list(TRUE, FALSE))
+class(list1)
+```
+
+The double-bracketed indexes tell you which element of the list is being displayed. The single-bracket indexes tell you which subelement of an element is being displayed. For example, 97 is the first subelement of the first element in the list. "R" is the first sub-element of the second element. This two-system notation arises because each element of a list can be any R object, including a new vector (or list) with its own indexes.
+
+```{r}
+list1[[1]][3]
+list1[[2]]
+```
+
+Lists are a basic type of object in R, on par with atomic vectors. Like atomic vectors, they are used as building blocks to create many more spohisticated types of R objects. As you can imagine, the structure of lists can become quite complicated, but this flexibility makes lists a useful all-purpose storage tool in R: you can group together anything with a list.
+
+#### Data Frame
+
+Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis. You can think of a data frame as R’s equivalent to the Excel spreadsheet because it stores data in a similar format. Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data.
+
+Creating a data frame by hand takes a lot of typing, but you can do it with the `data.frame` function. Give `data.frame` any number of vectors, each separated with a comma. Each vector should be set equal to a name that describes the vector. `data.frame` will turn each vector into a column of the new data frame. 
+
+```{r}
+world_oceans = data.frame(oceans = c("Atlantic", "Pacific", "Indian", "Arctic", "Southern"),
+                           area_km2 = c(77e6, 156e6, 69e6, 14e6, 20e6),
+                           avg_depth_m = c(3926, 4028, 3963, 3953, 4500))
+```
+
+To access / subset elements of your data frame, you can use square brackets to get the `[row(s), columns(s)]` just like with a matrix. Or you can use the `$` symbol to grab a single column from the data frame, identified by column name. If you want a subset of rows from a specific column, you can combine the `$` and `[]` notations to grab the row number(s) you want after identifying the column name. 
+
+```{r}
+world_oceans
+world_oceans[2,3] # Depth of the Pacific
+world_oceans$avg_depth_m # All depths
+world_oceans$avg_depth_m[2] # Depth of the Pacific
+```
+
+You can also use the `$` symbol to create a new column for your data frame:
+
+```{r}
+world_oceans$borders_usa = c(TRUE, TRUE, FALSE, TRUE, FALSE)
+```
+
+Much of the work in this class will be learning to use R to read and write data frames, and to manipulate, analyze and visualize the information in data frames.
+
+#### A note on naming objects
+
+Objects can be given any name such as x, current_temperature, or fish_id. You want your object names to be explicit and not too long. They cannot start with a number (2x is not valid, but x2 is). R is case sensitive (e.g., earth is different from Earth). There are some names that cannot be used because they are they are reserved for fundamental functions in R (?Reserved lists these words). In general, even if it’s allowed, it’s best to not use other function names (e.g., c, T, mean, data, df, weights). If in doubt, check the help or use tab completion to see if the name is already in use.
+
+It’s also best to avoid dots (.) within a variable name as in my.dataset. Historically, there are many functions in R with dots in their name, but since dots have a special meaning in R, it’s better to not use them and instead use underscores (_).
+
+### Exercise 1.2
+
+Use the `world_oceans` data frame that we have built and add a new column for ocean volume. Use the area and average depth variables to create a back-of-the-envelope volume calculation in $km^3$ (watch your units!). Then create a new data frame that holds just the subset of oceans that you have personally traveled to. 
+
+### Functions
+
+R comes with many functions that you can use to do simple or sophisticated tasks. You've already used a few functions, such as `print()`, `c()` and `data.frame()`. Functions make your life easier by taking a lot of code and condensing it into a single line of code. For example, you can round a number with the `round()` function, or calculate the mean of a vector with the `mean()` function. To use a function, write the name of the function and then provide the data you want the function to operate on in parentheses. The data that you pass into the function is called the function’s *parameters* or *arguments*. The parameters can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost fucntion, similar to the mathematical order of operations. 
+
+```{r}
+round(9.3452)
+mean(world_oceans$area_km2)
+round(mean(c(9.3452, 6.234, 11.983)))
+```
+
+Don't forget that you can easily learn about what a function does, what values it returns, and what parameters you can (or must) pass the function by using the `?` to access RStudio's Help feature, i.e. `?mean`. There are two types of parameters that you can pass to a function: required parameters and optional parameters. For a function to work properly (and not throw an error code) you must pass it all of the required parameters. However, often there are many optional parameters that you can pass a function if you choose. By including optional parameters, you typically override the default settings for those parameters to utilize more flexibility built into the function.
+
+In this course you will also learn how to create your own functions (often called user-defined functions). This is a good idea when you have to perform the same series of operations over and over. Writing and then calling your own function will be faster, less prone to errors, easier to change when needed, and more portable to other research projects.
+
+### Exercise 1.3
+
+Look at the R Documentation for the `signif()` function by typing `?signif` into the Console or searching for "signif" in the Help pane in the lower right corner of RStudio. Use signif() to reduce the number of digits in your world_oceans volume data to 3 significant digits then calculate the mean ocean volume. Try doing this in the opposite order by first calculating the mean ocean volume, then reducing your answer to just 3 significant digits. How different are the 2 answers? Which one is a better estimation? 
+
+### Packages
+
+You’re not the only person writing your own functions with R. Many professors, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. Most R packages are hosted at http://cran.r-project.org, the same website that hosts R. However, you don’t need to visit the website to download an R package; you can download packages straight from R’s command line. Here’s how:
+
+* Open RStudio.
+* Make sure you are connected to the Internet.
+* Run install.packages("name_of_package") at the command line.
+
+That’s it. R will have your computer visit the website, download ggplot2, and install the package in your hard drive right where R looks for it. Alternatively, you can use the `Tools` menu at the top of RStudio and click `Install Packages`. We'll be using plenty of packages in this class, with special emphasis on the suite of packages in the `tidyverse` and `ggplot`. Once you have a package installed on your computer, you'll need to load it at the top of your script with the `library()` function. For example:
+
+``` {r, eval=FALSE}
+install.packages('ggplot2')  # Only need to do this one time on a computer
+library('ggplot2') # Include this in every script that uses this package
+```
+
+Now you have the suite of functions in the ggplot2 package loaded up and ready to use in your script. Typically, R users put all of their `library()` commands at the top of a script rather than scattering them throughout their code whenever they decide to use a function in an external package.
+
+### Object-oriented programming
+
+R is an object oriented programming language. The theory and implementation behind object oriented programming is vast and deep and well beyond the scope of this class. However, what this means for you, the beginner data scientist, is that the same 'generic' function will behave completely differently depending on what kind of object has been passed to it. Usually, this is a very good thing that reduces your work load and reduces the number of functions you need to use and remember. As a simple example, the function `summary()` is a generic function that we will use often in this class to learn about the contents of an object. The value returned by the function `summary()` changes depending on what `class` of oject you pass in the parameters. The function `summary()` was designed this way so that the output would be most useful for each class of object you might want to summarize. Check out the `help` feature to learn more about how this generic function behaves differently depending on the class of variable that it is given:
+
+```{r}
+?summary 
+class(oceans) #oceans is an atomic vector filled with the character data type
+summary(oceans)
+class(my_array) # my_array is an array
+summary(my_array) 
+class(world_oceans) # world_oceans is a data.frame
+summary(world_oceans) 
+```
+
+Typically the object oriented features of R are wonderful and efficient, but if you aren't careful, they can also lead to unexpected behaviors and confusion.
+
+#### Coercion
+
+In general, *coercion* is an attempt by R to be flexible with data types. When a parameter does not match what is expected, some of the prebuilt R functions try to guess what was meant before throwing an error. This can also lead to confusion. Failing to understand coercion can drive programmers crazy when attempting to code in R since it behaves quite differently from most other languages in this regard. Let’s learn about it with some examples.
+
+We said that atomic vectors must be all of the same data type. So if we try to combine, say, numbers and characters, you might expect an error:
+
+```{r}
+random_data = c(1, "Atlantic", 3.7, TRUE)
+```
+
+But we don’t get one, not even a warning! What happened? Look at x and its class:
+
+```{r}
+random_data
+class(random_data)
+```
+
+R coerced the data into characters. It guessed that because you put a character string in the vector, you meant the numbers and the logical variable to actually be character strings as well. The fact that not even a warning is issued is an example of how coercion can cause many unnoticed errors in R. Now let's say you wanted to add up the first and third elements of your vector. Since you input them as numbers, it seems reasonable that you'd be able to do this:
+
+```{r, error=TRUE}
+random_data[1] + random_data[3]
+```
+
+However, you get an error because R doesn't know how to add up the characters "1" and "3.7". This simple example seems like an obvious mistake, but I guarantee that you'll slip into a careless moment at some point, and R will coerce your object into something you didn't expect, and you'll waste time and precious sanity trying to figure out why your script isn't doing what you want it to. We've all been there.
+
+R also offers functions to change from one type to another. For example, you can turn numbers into characters with:
+
+```{r}
+my_kids_ages = c(1,5,7)
+class(my_kids_ages)
+ages_as_characters = as.character(my_kids_ages)
+class(ages_as_characters)
+```
+
+You can even manually coerce your `random_data` variable so you can force that summation you were working on earlier:
+
+```{r}
+as.numeric(random_data[1]) + as.numeric(random_data[3])
+```
+
+### Special Values
+
+R has native support for missing data, which is designated as `NA` for "Not Available". Scientists often have to deal with tons of missing data, so you'll become used to dealing with NAs. Functions have special actions when they encounter values of `NA`, and may have arguments to control the handling of NAs.
+
+```{r}
+x = c(0.5, -0.2, NA, 0.7)
+x
+is.na(x)  # Examine your data to see if there are NAs
+mean(x)
+mean(x, na.rm = TRUE) # include an optional parameter to remove (or ignore) NAs in the data
+```
+
+When you attempt a numerical calculation that is impossible, R will designate the resulting value as `NaN` for "Not a Number". When a calculation results in an infinitely large number, R designates it as `Inf.` 
+
+```{r}
+1/0
+0/0
+Inf + 2
+Inf / Inf
+```
+
+Another special value in R is `NULL`. It's similar to `NA`, but instead of acting as a place holder for a missing value, `NULL` is used mainly to represent lists with zero length. `NULL` is often returned by expressions and functions whose value is undefined. 
+
+### Additional Resources
+
+There is a great (free!) beginniner's guide to programming in R:
+“Hands-On Programming with R” by Garrett Grolemund
+https://rstudio-education.github.io/hopr/
+

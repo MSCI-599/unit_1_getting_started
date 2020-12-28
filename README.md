@@ -1,2 +1,2 @@
-# unit_1_getting_started
-Intro to R, RStudio, RMarkdown and GitHub
+# project_1
+Intro to R and RStudio

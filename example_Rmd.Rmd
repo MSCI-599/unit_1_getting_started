@@ -94,7 +94,7 @@ Or we can embed them into the text so that you don't see the actual link, you ju
 
 We can also embed figures that we already have saved on our hard drive like this. Make sure the path to where the file is stored is relative to the path where your RMarkdown document lives.
 
-![A Piled Higher and Deeper comic](figs/PhD_coding.png)
+![A Piled Higher and Deeper comic](doc/PhD_coding.png)
 
 Most rich text formatting won't render properly in RMarkdown if it's not separated by a line of white space. Make sure you include a blank line before an after lists, code chunks, headings, embedded figures, etc. 
 

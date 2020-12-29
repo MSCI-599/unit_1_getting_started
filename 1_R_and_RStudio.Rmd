@@ -22,7 +22,7 @@ R is a dynamic programming language, which means R automatically interprets your
 Remember that R is the programming language we will learn in this course. However, when we write and run code we will usually do it through RStudio. RStudio is a free, open source R integrated development environment (IDE). It provides a built in editor, works on all platforms (including on servers) and provides many advantages like integration with gitHub and software for writing dynamic notebooks such as RMarkdown files. You'll learn about this later. For now, just trust me that all the cool kids use RStudio. To get started, open RStudio just as you would open any other application on your computer. 
 
 When you open RStudio, a window should appear in your screen like this:
-![](figs/01-rstudio.png)
+![](doc/01-rstudio.png)
 
 The RStudio interface is simple. When you first open RStudio, there are three large panes. The left pane is the console, where you can either directly type in the code you want to run. The output from your code is also printed directly into the console. The upper right pane shows the RStudio Environment, which lists all of the objects that are currently loaded. You can use the lower right pane to toggle between the `Files` and directories on your computer, to view `Plots` you have made and to use the `Help` features to search for documentation on many of the functionalities within R.
 
@@ -73,7 +73,7 @@ Sometimes you'll run a command that takes FOREVER, and perhaps you realize that'
 ### Creating an R script
 
 When you need to write more than one or two lines of code, typing your commands into the RStudio console becomes very impractical. Instead, we will open a new R script (.R file), which is a type of text file where we can save every line of code that we write. Go to `File` -> `New file` -> `R Script` to get started. Now your RStudio window will look like this:
-![](figs/01-rstudio-script.png)
+![](doc/01-rstudio-script.png)
 
 
 Now the top left pane is your new R script, and the bottom left pane is the console. You can still type commands into the console whenever you would like to. However, you can also type your commands into the R script, and when you run the commands, the commands and output will be printed to the console. Try typing `print('Hello world')` as the first line in your R script. To run or "execute" your command, put your cursor anywhere on the line and hit `control + Enter` in Windows, `command + Enter` on a Mac or `control + Return` on a Linus machine. The cursor will automatically advance to the next line so that you can run your code line by line. If you highlight a section of code, the same run command will run all of the lines within the highlighted section. Alternatively, you can press the green arrow button in RStudio to execute your code, or click on `Run selected lines` under the `Code` drop-down menu. Now you can edit and save your code in the R script - that way you can look at it or re-run it later.
@@ -151,7 +151,9 @@ So we have already seen *character* data types (often called *strings* in other 
 * logical: TRUE, T, FALSE, F
 
 Note that R often refers to both doubles and integers as the numeric data type. The data that scientists work with are essentially lists filled with these data types, such as a 100 temperature recordings, or the first and last names of all of the students in a class. R’s base data structures, or *classes* can be organised by their dimensionality (1d, 2d, or nd) and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types). R’s most common data structures are vectors, matrices, arrays, lists, and data frames:
-![](figs/R_data_types.png) 
+
+
+![](doc/R_data_types.png){width=50%}
 
 #### Atomic vectors
 

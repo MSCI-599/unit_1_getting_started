@@ -273,7 +273,7 @@ When you are working, open up the `.Rmd` file associated with the lesson tutoria
 
 ## Course homework workflow
 
-I will send out homework assignments through GitHub Classroom. This will create a private repository that is just for your homework assignment where you can clone your private homework repo to your local computer, build your scripts / files, commit (save) your work, and push it back to your private homework repo that I have access to for grading.
+I will send out a homework assignment URL for each assignment through GitHub Classroom. This will create a private repository that is just for your homework assignment where you can clone your private homework repo to your local computer, build your scripts / files, commit (save) your work, and push it back to your private homework repo that I have access to for grading. The first time you accept a homework assignment for this class, you'll receive a request to link your GitHub account to your name/email/student ID (I haven't decided which) to the class roster. This is important because that's how I'll know how to relate the completed homework files to the student that submitted them. Once you have accepted your assignment (and once you have linked your GitHub account to your identifier) you'll interact with the homework template like a normal GitHub repository. Make changes to the file(s), add files and add data as needed to complete the assignment, then push your changes back out to GitHub through RStudio before the deadline. Voila!
 
 ### Potential problems
 

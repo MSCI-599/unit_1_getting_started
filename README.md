@@ -1,6 +1,9 @@
 ### MSCI 599 Marine Data Science with R
 ### Unit 1: Getting Started
 
+Course GitHub site: https://github.com/MSCI-599
+Unit 1 GitHub repository: https://github.com/MSCI-599/unit_1_getting_started
+
 Introductions to the major software that we will use in this class.
 
 ***

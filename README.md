@@ -19,7 +19,7 @@ Introductions to the major software that we will use in this class.
    + Consider signing up for the free student account which gives perks like free private repositories: https://education.github.com/discount_requests/student_application
 -  Download and install Git on your computer: https://git-scm.com/downloads
    +  See the beginning of MSCI 599 Unit 1 lesson file `3_GitHub.Rmd` for more installation and configuration instructions
-   +  Make sure to set Git email and username on your local computer
+   +  Make sure to configure Git email and username on your local computer
 
 
 ***

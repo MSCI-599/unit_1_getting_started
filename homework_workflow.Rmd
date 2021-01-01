@@ -1,0 +1,16 @@
+---
+output: html_document
+---
+
+### Homework Work Flow
+
+1.  Follow the link to your homework assigment
+    +  the links are on the README file for each unit repository
+    +  link your GitHub account to your student identifier (1st assignment only)
+3.  `Accept` the assignment
+4.  Follow the link to your new, private homework repository
+5.  Clone the repository to your local computer 
+    +  Click `Code` and copy the repo link
+    +  Open RStudio and create a new project with Git version control using the repo link
+6.  Do the homework assignment
+7.  Use the `Git` pane in RStudio to push out your new files and edits to the online repo by the due date

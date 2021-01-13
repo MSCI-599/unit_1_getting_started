@@ -1,5 +1,5 @@
 ---
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -22,6 +22,7 @@ R is a dynamic programming language, which means R automatically interprets your
 Remember that R is the programming language we will learn in this course. However, when we write and run code we will usually do it through RStudio. RStudio is a free, open source R integrated development environment (IDE). It provides a built in editor, works on all platforms (including on servers) and provides many advantages like integration with gitHub and software for writing dynamic notebooks such as RMarkdown files. You'll learn about this later. For now, just trust me that all the cool kids use RStudio. To get started, open RStudio just as you would open any other application on your computer. 
 
 When you open RStudio, a window should appear in your screen like this:
+
 ![](doc/01-rstudio.png)
 
 The RStudio interface is simple. When you first open RStudio, there are three large panes. The left pane is the console, where you can either directly type in the code you want to run. The output from your code is also printed directly into the console. The upper right pane shows the RStudio Environment, which lists all of the objects that are currently loaded. You can use the lower right pane to toggle between the `Files` and directories on your computer, to view `Plots` you have made and to use the `Help` features to search for documentation on many of the functionalities within R.
@@ -73,6 +74,7 @@ Sometimes you'll run a command that takes FOREVER, and perhaps you realize that'
 ### Creating an R script
 
 When you need to write more than one or two lines of code, typing your commands into the RStudio console becomes very impractical. Instead, we will open a new R script (.R file), which is a type of text file where we can save every line of code that we write. Go to `File` -> `New file` -> `R Script` to get started. Now your RStudio window will look like this:
+
 ![](doc/01-rstudio-script.png)
 
 

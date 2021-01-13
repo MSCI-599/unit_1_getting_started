@@ -64,7 +64,9 @@ output: html_document
 ---
 ```
 
-In the YAML header example above, the `.Rmd` file is set to create an .html document when it is knit. If, for example you would prefer a .pdf output document, you can change the output parameter in your YAML header to `pdf_document`
+In the YAML header example above, the `.Rmd` file is set to create an .html document when it is knit. If, for example you would prefer a .pdf output document, you can change the output parameter in your YAML header to `pdf_document`. Note: To knit a pdf document, you need to have latex installed on your computer. If you haven't already, go ahead and download / install latex here:
+
+https://www.latex-project.org/get/
 
 ### Code Chunks
 

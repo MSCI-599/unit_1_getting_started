@@ -15,10 +15,16 @@ Introductions to the major software that we will use in this class.
    + (or make sure your current version of R is updated)
 -  Download and install the latest version of RStudio Desktop: https://rstudio.com/products/rstudio/download/
    + (or make sure your current version of RStudio is updated)
+-  Download and install Latex: https://www.latex-project.org/get/
+-  If you are on a mac, download and install Xcode Command Line Tools
+   + Go to Applications -> Utilities -> Terminal and type:  xcode-select --install
+   + OR: Download here: https://developer.apple.com/xcode/
+   + then Go to Applications -> Utilities -> Terminal and type: sudo xcodebuild -license accept
+   + Note: You will need administrative privileges and the password for your computer
 -  Register (make a user profile) on GitHub: https://github.com/
    + Consider signing up for the free student account which gives perks like free private repositories: https://education.github.com/discount_requests/student_application
 -  Download and install Git on your computer: https://git-scm.com/downloads
-   +  See the beginning of MSCI 599 Unit 1 lesson file `3_GitHub.Rmd` for more installation and configuration instructions
+   +  See the beginning of MSCI 599 Unit 1 lesson file `3_GitHub.html` for more installation and configuration instructions
    +  Make sure to configure Git email and username on your local computer
 
 
@@ -34,7 +40,7 @@ print(), c(), typeof(), length(), seq(), rep(), matrix(), class(), array(), list
 
 ***
 
-#### Lesson 1: Introduction to Git and GitHub
+#### Lesson 3: Introduction to Git and GitHub
 
 ***
 

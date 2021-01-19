@@ -29,3 +29,20 @@ plot(x,y)
 ```
 
 There are plenty of other code chunk instructions you can inlcude in the curly braces to customize your `.Rmd` file. 
+
+***
+
+Bulleted lists:
+
+My family's fave pizza toppings:
+
+- pineapple
+- bacon
+
+***
+
+My pet's in order of how much I like them:
+
+1. Nana (dog)
+2. Wheezer (cat)
+3. Napoleon (jerkface)

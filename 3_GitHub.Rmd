@@ -315,9 +315,12 @@ Here is a great reference guide for using Git and GitHub as an R programmer:
 
 "Happy Git and GitHub for the useR" by Jenny Bryan and Jim Hester: https://happygitwithr.com/
 
+Great resource for common Git problems (requires command line interface):
+https://ohshitgit.com/
+
 #### Sync and interact with your repository through the command line
 
-Traditionally, Git uses the command line to perform actions on local Git repositories. In this class we don't use the command line but it is necessary if you want more control over Git. There are several excellent introductory guides on version control using Git, e.g. [Prof Simon Mudd's Numeracy, Modelling and Data management guide](http://simon-m-mudd.github.io/NMDM_book/#_version_control_with_git), [The Software Carpentry guide](https://swcarpentry.github.io/git-novice/), and this [guide from the British Ecological Society Version Control workshop](https://github.com/BES2016Workshop/version-control). For more generic command line tools, look at this [general cheat sheet](https://www.git-tower.com/blog/command-line-cheat-sheet) and this [cheat sheet for mac users](https://github.com/0nn0/terminal-mac-cheatsheet). We have also created a table and flow diagram with some basic Git commands and how they fit into the Git/Github workflow. Orange lines refer to the core workflow, the blue lines describe extra functions and the green lines deal with branches:
+Traditionally, Git uses the command line to perform actions on local Git repositories. In this class we don't use the command line but it is necessary if you want more control over Git. There are several excellent introductory guides on version control using Git, e.g. [Prof Simon Mudd's Numeracy, Modelling and Data management guide](http://simon-m-mudd.github.io/NMDM_book/#_version_control_with_git), [The Software Carpentry guide](https://swcarpentry.github.io/git-novice/), and this [guide from the British Ecological Society Version Control workshop](https://github.com/BES2016Workshop/version-control). For more generic command line tools, look at this [general cheat sheet](https://www.git-tower.com/blog/command-line-cheat-sheet) and this [cheat sheet for mac users](https://github.com/0nn0/terminal-mac-cheatsheet). Here is a table and flow diagram with some basic Git commands and how they fit into the Git/Github workflow:
 
 
 

@@ -315,6 +315,9 @@ Here is a great reference guide for using Git and GitHub as an R programmer:
 
 "Happy Git and GitHub for the useR" by Jenny Bryan and Jim Hester: https://happygitwithr.com/
 
+Specifically, if you are having trouble linking Git up with RStudio, look here:
+https://happygitwithr.com/rstudio-see-git.html#rstudio-see-git
+
 Great resource for common Git problems (requires command line interface):
 https://ohshitgit.com/
 

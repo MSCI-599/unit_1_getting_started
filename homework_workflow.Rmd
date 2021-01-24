@@ -6,11 +6,15 @@ output: html_document
 
 1.  Follow the link to your homework assigment
     +  the links are on the README file for each unit repository
-    +  link your GitHub account to your student identifier (1st assignment only)
-3.  `Accept` the assignment
-4.  Follow the link to your new, private homework repository
-5.  Clone the repository to your local computer 
+    +  link your GitHub account to your username listed in the roster (1st assignment only)
+2.  `Accept` the assignment
+3.  Follow the link to your new, private homework repository
+4.  Clone the repository to your local computer 
     +  Click `Code` and copy the repo link
     +  Open RStudio and create a new project with Git version control using the repo link
-6.  Do the homework assignment
-7.  Use the `Git` pane in RStudio to push out your new files and edits to the online repo by the due date
+5.  Do the homework assignment
+    +  Add your text and code to answer the questions at the bottom of the HW file (e.g. `HW_2a_sea_level_rise.Rmd`)
+6.  Use the `Git` pane in RStudio to push out your new files and edits to the online repo by the due date
+    + You can push out edits as often as you want - I won't look at or consider your homework "final" until after the due date.
+    
+    

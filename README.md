@@ -48,7 +48,7 @@ print(), c(), typeof(), length(), seq(), rep(), matrix(), class(), array(), list
 
 https://classroom.github.com/a/A_pqGijk
 
-DUE: 1/27/2021
+DUE: 2/3/2021
 
 ***
 

@@ -1,5 +1,6 @@
 ---
-output: html_document
+output:
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -71,7 +72,7 @@ Follow any instructions in the terminal window, you may need to enter your Mac's
 
 The first thing you must do when you install Git is to set your user name and email address. This is important because every Git commit uses this information, and it’s immutably baked into the commits you start creating. You only need to do this once if you pass the --global option, because then Git will always use that information for anything you do on that system. If you want to override this with a different name or email address for specific projects, you can run the command without the --global option when you’re in that project.
 
-Do this by opening the shell on your computer. On a Mac computer, go to `Applications -> Utilities -> Terminal`. On a Windows machine, open up `Git Bash` (you can find it by going to your Start Menu and typing `Git Bash` into the search bar and clicking on it). 
+Do this by opening the shell on your computer. On a Mac computer, go to `Applications -> Utilities -> Terminal`. On a Windows machine, open up `Git Bash` (you can find it by going to your Start Menu and typing `Git Bash` into the search bar and clicking on it). Another way for Mac or Windows users to open their shell is through RStudio. In the lower-left hand pane, switch from the `Console` tab to the `Terminal` tab. This is equivalent to the Mac Terminal, and on Windows, once Git is installed, this should default to the Git Bash Shell.
 
 Then, at the prompt in your shell, type in the following code. Note that `your_email@example.com` should be the email address that you used to set up your GitHub account. You can type in whatever you want between the quotation marks for `Your GitHub Username`, although I chose my actual GitHub username `eringutbrod` for simplicity.
 
@@ -83,6 +84,12 @@ git config --global user.email your_email@example.com
 
 git config --global user.name "Your GitHub Username"
 # Add your username and click Enter
+```
+
+If you have a Windows computer, type the following to turn off this annoying feature where Windows can't handle filenames from git if there are too many characters in the filename:
+
+```
+git config --global core.longpaths true
 ```
 
 That's it! If you are interested in double checking your `Git` settings, you can type in the following command into your shell:

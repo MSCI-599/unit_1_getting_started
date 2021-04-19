@@ -5,16 +5,46 @@ output: html_document
 ### Homework Work Flow
 
 1.  Follow the link to your homework assigment
-    +  the links are on the README file for each unit repository
-    +  link your GitHub account to your username listed in the roster (1st assignment only)
+    +  the links are sent via email and on the README file for each unit repository
 2.  `Accept` the assignment
+    +  link your GitHub account to your username listed in the roster (1st assignment only)
 3.  Follow the link to your new, private homework repository
 4.  Clone the repository to your local computer 
     +  Click `Code` and copy the repo link
     +  Open RStudio and create a new project with Git version control using the repo link
 5.  Do the homework assignment
     +  Add your text and code to answer the questions at the bottom of the HW file (e.g. `HW_2a_sea_level_rise.Rmd`)
-6.  Use the `Git` pane in RStudio to push out your new files and edits to the online repo by the due date
-    + You can push out edits as often as you want - I won't look at or consider your homework "final" until after the due date.
+    + **Make sure your .Rmd files knits** before turning in the homework
+6.  •	Use the `Git` pane in RStudio to push your work out to GitHub periotically 
+    + `stage` the files you want added to the repo (**please include the .Rproj file**)
+    + `commit` (don’t forget the commit message!)
+    + `pull` (to check for updates already up on GitHub)
+    + `push` out your new files and edits to the online repo 
+    + Note: You can push out edits as often as you want - I won't look at or consider your homework "final" until after the due date.
+
+    
+    
+### Homework tips
+
+Homeworks will be graded out of a total of 20 points.
+
+Grade comments will be at the top of the .Rmd file, and perhaps throughout depending on whether I needed to make corrections. My comments in the text part of the doc will look like this:
+
+```
+<span style="color:red">
+Graded 2021-2-6:  20/20 pts. Here are my comments.
+</span>
+```
+
+If you knit the .Rmd file you will see my comments in red font. I may also include edits in your code chunks. I’ll comment my added code with something like #EMG. I also may comment out your code or add an eval=FALSE tag to your code chunk if necessary.
+
+
+Tips when turning in homework:
+
+1.	*Make sure you knit your .Rmd when you are finished*. This will ensure that there are no errors in your final R code. It also ensures that your .html file is up-to-date relative to changes you’ve made in your .Rmd document.
+2.	When you create a new .Rmd file to put in your code and answers, delete all of the boilerplate text that comes with a new .Rmd document.
+3.	Comments in the code chunks (i.e. with ‘#’) are for documenting your code. Text outside of the code chunks is for writing sentences and paragraphs to describe your methods, results, etc. All complete .Rmd documents should contain both code comments and text outside of the chunks.
+4.  It's okay to do some of your coding in a .R file while you are working if that's easier for you. However, when you turn in your final version of your homework, your .Rmd file should include all of the steps that you need to produce the final product - from reading in the raw data, doing your analysis and producing your figures.
+
     
     
